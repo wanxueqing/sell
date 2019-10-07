@@ -1,0 +1,52 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: root
+    url: jdbc:mysql://localhost:3306/sell?serverTimezone=GMT%2B8
+# 以下配置返回数据给前端的对象为null时，将忽略这个对象数据，不显示在前端页面
+  jackson:
+    default-property-inclusion: non_null
+  redis:
+    host: 192.168.145.139
+    port: 6379
+server:
+  servlet:
+    context-path: /sell
+#logging:
+#  pattern:
+#    # 配置日志的格式 %d 日期  %msg 日志的信息 %n 换行
+#    console: "%d - %msg%n"
+##  path: D:\sellLog
+#  # 配置日志输出路径以及指定日志文件名为sell.log
+#  file: D:\sellLog\sell.log
+#  # 调整日志级别
+#  level: debug
+## 我们还可以指定到某个类
+# #   com.xuehaizi.sell.LoggerTest: debug
+
+wechat:
+  mpAppId: wx6ad144e54af67d87
+  mpAppSecret: 7ea56cf1f1a5211e1cc9a07bf24dec8d
+  openAppId: oTgZpwVGOBGlsfwXcnpCgEUouh3A
+  openAppSecret: 91a2ff6d38a2bbccfb7e9f9079108e2e
+  mchId: 1483469312
+  mchKey: C5245D70627C1F8E9964D494B0735025
+  keyPath: C:\Users\45196\Desktop\coding-117\doc\h5.p12
+  notifyUrl: http://xuehaizi.natapp1.cc/sell/pay/notify
+  templateId:
+    orderStatus:
+
+projectUrl:
+  wechatMpAuthorize: http://sell.springboot.cn
+  wechatopenAuthorize: http://sell.springboot.cn
+  sell: http://sell.springboot.cn
+
+#  配置这个可以打印mybatis的SQL语句
+logging:
+  level:
+    com.xuehaizi.sell.dataobject.mapper: trace
+
+#mybatis配置
+mybatis:
+  mapper-locations: classpath:mapper/*.xml

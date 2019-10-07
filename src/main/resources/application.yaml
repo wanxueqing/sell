@@ -1,0 +1,4 @@
+# 设置默认启用配置
+spring:
+  profiles:
+    active: dev
